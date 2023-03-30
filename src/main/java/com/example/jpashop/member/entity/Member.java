@@ -9,8 +9,9 @@ public class Member {
 
     @Id
     @Column(name = "ID")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id; // 아이디
-    @Column(name = "NAME")
+    @Column(name = "NAME", nullable= false, length = 10)
     private String username; // 이름
     // 매핑 정보 없음
     private Integer age; // 나이
