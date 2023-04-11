@@ -1,43 +1,37 @@
 package com.example.jpashop.member.entity;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "MEMBER")
 public class Member {
 
     @Id
-    @Column(name = "ID")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id; // 아이디
-    @Column(name = "NAME", nullable= false, length = 10)
-    private String username; // 이름
-    // 매핑 정보 없음
-    private Integer age; // 나이
+    @Column(name = "MEMBER_ID")
+    @GeneratedValue
+    private Long id;
+    private String name; // 이름
 
-    @Enumerated(EnumType.STRING)
-    private RoleType roleType;
-
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date createdDate;
-
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date lastModifiedDate;
-
-    @Lob
-    private String description;
+    private String city;
+    private String street;
+    private String zipcode;
 
     //Getter, Setter
-    public String getId() { return id; }
-    public void setId(String id) { this.id=id; }
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id=id; }
 
-    public String getUsername() { return id; }
-    public void setUsername(String username) { this.username=username; }
+    public String getName() { return name; }
+    public void setName(String name) { this.name=name; }
 
-    public Integer getAge() { return age; }
-    public void setAge(Integer id) { this.age=age; }
+    public String getCity() { return city; }
+    public void setCity(String city) { this.city=city; }
 
+    public String getStreet() { return street; }
+    public void setStreet(String street) { this.street=street; }
 
+    public String getZipcode() { return zipcode; }
+    public void setZipcode(String zipcode) { this.zipcode=zipcode; }
 
 }
